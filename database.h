@@ -5,24 +5,23 @@
 #include <stdio.h>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlResult>
+#include <QDebug>
+
+extern QString hostname  ;
+extern int port ;
+extern QString basename  ;
+extern QString username ;
+extern QString password  ;
 class database
 {
     QSqlDatabase db;
-
-    struct loginuser{
-        QString name;
-        QString user_id;
-        QString user_name;
-    };
-
 public:
-    database(QString &hostname,
-             int port,
-             QString &databasename ,
-             QString &username,
-             QString &password);
+    database();
     bool checkConnect();
     QSqlQuery selectCommond(QString &commond);
+    QSqlDatabase getDatabase(){
+        return this->db;
+    }
     ~database();
 };
 #endif // DATABASE_H

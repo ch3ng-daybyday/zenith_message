@@ -3,11 +3,10 @@
 
 #include <QWidget>
 #include <QPushButton>
-#include <QDebug>
 #include <QGroupBox>
 #include <QLabel>
 #include <QTextEdit>
-
+#include <database.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -21,6 +20,7 @@ public:
     ~Widget();
 private  slots:
     void userlogin();
+
 private:
     Ui::Widget *ui;
     QPushButton *qb = new QPushButton("Login",this);
@@ -28,8 +28,5 @@ private:
     QLabel**ql =new QLabel*[2]{new QLabel("username", this),new QLabel("password", this)};
     QTextEdit**  qte = new QTextEdit*[2]{new QTextEdit(this),new QTextEdit(this)};
     void creatButton();
-
-
-
 };
 #endif // WIDGET_H
