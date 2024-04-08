@@ -1,4 +1,4 @@
-#include "widget.h"
+﻿#include "widget.h"
 #include "ui_widget.h"
 #include "iostream"
 #include "database.h"
@@ -10,6 +10,11 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     this->resize(965,570);
     this->setWindowTitle("Hello Zenith");
+    //创建 以及 设置控件
+    qb = new QPushButton("Login",this);
+    qgb = new QGroupBox;
+    ql =new QLabel*[2]{new QLabel("username", this),new QLabel("password", this)};
+    qte = new QTextEdit*[2]{new QTextEdit(this),new QTextEdit(this)};
     creatButton();
 }
 
